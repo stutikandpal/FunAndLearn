@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fun_and_learn/index.dart';
+import 'package:fun_and_learn/levele1.dart';
 import 'dart:math';
 import 'index.dart';
 class MyApp2 extends StatelessWidget {
@@ -19,12 +21,12 @@ class ColorGame extends StatefulWidget {
 class ColorGameState extends State<ColorGame> {
   final Map<String, bool> score = {};
   final Map choices = {
-    '🍏': Colors.green,
-    '🍋': Colors.yellow,
-    '🍅': Colors.red,
-    '🍇': Colors.purple,
-    '🥥': Colors.brown,
-    '🥕': Colors.orange
+    '🌻 Sunflower':'Karnataka',
+'🍎Apple':'Himanchal Pradesh',
+'🌾Wheat':'Madhya Pradesh',
+'🥔Potato':'Uttar Pradesh',
+'🌶️Chilli':'Andhra Pradesh',
+'🌽Maize':'Maharashtra'
   };
   int count=0;
   int seed = 0;
@@ -40,6 +42,7 @@ class ColorGameState extends State<ColorGame> {
           setState(() {
             score.clear();
             seed++;
+            count=0;
           });
         },
       ),
@@ -78,11 +81,11 @@ class ColorGameState extends State<ColorGame> {
             child: Text('Correct!'),
             alignment: Alignment.center,
             height: 80,
-            width: 200,
+            width: 180,
           );
         }
          else {
-          return Container(color: choices[emoji], height: 80, width: 200);
+          return Container(color: Colors.indigo, height: 80, width: 180, child: Text(choices[emoji], style: TextStyle(color: Colors.white, fontSize: 25),),);
         }
       },
       onWillAccept: (data) => data == emoji,
@@ -113,7 +116,7 @@ class Emoji extends StatelessWidget {
         padding: EdgeInsets.all(10),
         child: Text(
           emoji,
-          style: TextStyle(color: Colors.black, fontSize: 45),
+          style: TextStyle(color: Colors.black, fontSize: 25),
         ),
       ),
     );
@@ -126,19 +129,32 @@ Widget _buildPopupDialog(BuildContext context) {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text("Level Completed",),
+        Text("Level 2 Completed",),
       ],
     ),
     actions: <Widget>[
-      new ElevatedButton(
-        onPressed: () {
+
+      new ElevatedButton(onPressed: 
+      () {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Home()),
             );
           },
+       child: const Text('Go to Home'), 
+       style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.grey)),),
+
+
+      new ElevatedButton(
+        onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MyApp1()),
+            );
+          },
         child: const Text('Next Level'),
       ),
+      
     ],
   );
 }

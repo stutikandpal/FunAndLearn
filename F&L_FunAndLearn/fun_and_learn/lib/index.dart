@@ -11,7 +11,12 @@ class Home extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'PressStart',
       ),
-      home: MyStatefulWidget(),
+      home: Container( 
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/India.jpg"), fit: BoxFit.cover)),
+      child: MyStatefulWidget(),
+      )
     );
   }
 }
@@ -27,6 +32,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
           title: Text('Fun and Learn'),
           backgroundColor: Colors.pink),
@@ -78,7 +84,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => MyApp1()),
+              MaterialPageRoute(builder: (context) => MyApp2()),
             );
           },
         child: const Text('Level 4'),
