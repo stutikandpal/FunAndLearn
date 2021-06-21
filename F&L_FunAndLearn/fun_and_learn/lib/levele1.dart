@@ -5,6 +5,7 @@ import 'index.dart';
 class MyApp1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Future.delayed(Duration.zero, () => showAlert(context));
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'PressStart',
@@ -12,6 +13,26 @@ class MyApp1 extends StatelessWidget {
       home: ColorGame(),
     );
   }
+  void showAlert(BuildContext context) {
+      showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+    title: const Text('Level 1'),
+    content: new Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text("Drag the states and Drop on the languages spoken there.",),
+      ],
+    ),
+    actions: <Widget>[
+      new ElevatedButton(
+        onPressed: () => Navigator.pop(context, 'Start'),
+        child: const Text('Start'),
+      ),
+    ],
+  ));
+    }
 }
 class ColorGame extends StatefulWidget {
   ColorGame({ Key? key }) : super(key: key);
@@ -29,14 +50,20 @@ class ColorGameState extends State<ColorGame> {
   };
   int count=0;
   int seed = 0;
-  @override
-  void initState(){
-    super.initState();
-    _buildPopupDialogstart(context);
-  }
+  
+
+
+
+
+  
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
           title: Text('Score ${score.length} / 6'),
@@ -145,7 +172,7 @@ Widget _buildPopupDialog(BuildContext context) {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text("Level 2 Completed",),
+        Text("Level 1 Completed",),
       ],
     ),
     actions: <Widget>[
@@ -168,24 +195,6 @@ Widget _buildPopupDialog(BuildContext context) {
             );
           },
         child: const Text('Next Level'),
-      ),
-    ],
-  );
-}
-Widget _buildPopupDialogstart(BuildContext context) {
-  return new AlertDialog(
-    title: const Text('Level 1'),
-    content: new Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text("Drag and Drop the states on the languages spoken there.",),
-      ],
-    ),
-    actions: <Widget>[
-      new ElevatedButton(
-        onPressed: () => Navigator.pop(context, 'Start'),
-        child: const Text('Start'),
       ),
     ],
   );

@@ -6,6 +6,7 @@ import 'index.dart';
 class MyApp2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Future.delayed(Duration.zero, () => showAlert(context));
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'PressStart',
@@ -13,6 +14,26 @@ class MyApp2 extends StatelessWidget {
       home: ColorGame(),
     );
   }
+  void showAlert(BuildContext context) {
+      showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+    title: const Text('Level 2'),
+    content: new Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text("Drag the crops and drop on the states they are grown most/best in.",),
+      ],
+    ),
+    actions: <Widget>[
+      new ElevatedButton(
+        onPressed: () => Navigator.pop(context, 'Start'),
+        child: const Text('Start'),
+      ),
+    ],
+  ));
+    }
 }
 class ColorGame extends StatefulWidget {
   ColorGame({ Key? key }) : super(key: key);
@@ -30,6 +51,9 @@ class ColorGameState extends State<ColorGame> {
   };
   int count=0;
   int seed = 0;
+
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
