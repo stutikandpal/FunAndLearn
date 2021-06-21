@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fun_and_learn/levele2.dart';
 import 'package:fun_and_learn/levele1.dart';
+import 'package:fun_and_learn/levele3.dart';
 
 class Home extends StatelessWidget {
   const Home({ Key? key }) : super(key: key);
@@ -59,7 +60,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => MyApp1()),
+              MaterialPageRoute(builder: (context) => MyApp3()),
             );
           },
         child: const Text('Level 3'),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fun_and_learn/index.dart';
-import 'package:fun_and_learn/levele1.dart';
+//import 'package:fun_and_learn/levele1.dart';
+import 'package:fun_and_learn/levele3.dart';
 import 'dart:math';
 import 'index.dart';
 class MyApp2 extends StatelessWidget {
@@ -43,7 +44,7 @@ class ColorGameState extends State<ColorGame> {
   final Map<String, bool> score = {};
   final Map choices = {
     '🌻 Sunflower':'Karnataka',
-'🍎Apple':'Himanchal Pradesh',
+'🍎Apple':'Himachal Pradesh',
 '🌾Wheat':'Madhya Pradesh',
 '🥔Potato':'Uttar Pradesh',
 '🌶️Chilli':'Andhra Pradesh',
@@ -173,7 +174,7 @@ Widget _buildPopupDialog(BuildContext context) {
         onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => MyApp1()),
+              MaterialPageRoute(builder: (context) => MyApp3()),
             );
           },
         child: const Text('Next Level'),
