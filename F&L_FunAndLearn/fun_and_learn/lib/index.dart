@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fun_and_learn/levele2.dart';
 import 'package:fun_and_learn/levele1.dart';
+import 'package:fun_and_learn/levele2.dart';
 import 'package:fun_and_learn/levele3.dart';
-
 class Home extends StatelessWidget {
   const Home({ Key? key }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,14 +19,12 @@ class Home extends StatelessWidget {
     );
   }
 }
-
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({ Key? key }) : super(key: key);
 
   @override
   _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
 }
-
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
@@ -37,7 +33,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       appBar: AppBar(
           title: Text('Fun and Learn'),
           backgroundColor: Colors.pink),
-      
       body: 
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -55,7 +50,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           },
         child: const Text('Level 1'),
       ),
-
       new ElevatedButton(
         onPressed: () {
             Navigator.push(
@@ -80,7 +74,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           },
         child: const Text('Level 2'),
       ),
-
       new ElevatedButton(
         onPressed: () {
             Navigator.push(
@@ -90,8 +83,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           },
         child: const Text('Level 4'),
       ),
-            ]
-                
+            ]   
           )
         ],
       ),

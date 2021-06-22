@@ -1,3 +1,4 @@
+//import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:fun_and_learn/index.dart';
 //import 'package:fun_and_learn/levele1.dart';
@@ -44,17 +45,18 @@ class ColorGameState extends State<ColorGame> {
   final Map<String, bool> score = {};
   final Map choices = {
     '🌻 Sunflower':'Karnataka',
-'🍎Apple':'Himachal Pradesh',
-'🌾Wheat':'Madhya Pradesh',
-'🥔Potato':'Uttar Pradesh',
-'🌶️Chilli':'Andhra Pradesh',
-'🌽Maize':'Maharashtra'
+    '🍎Apple':'Himachal Pradesh',
+    '🌾Wheat':'Madhya Pradesh',
+    '🥔Potato':'Uttar Pradesh',
+    '🌶️Chilli':'Andhra Pradesh',
+    '🌽Maize':'Maharashtra'
   };
   int count=0;
   int seed = 0;
-
+  //AudioCache _audiocontroller = AudioCache();
+  //AudioCache _audioController = AudioCache();
+  //AudioPlayer audioplayer = AudioPlayer();
   
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,7 +104,7 @@ class ColorGameState extends State<ColorGame> {
       builder: (BuildContext context, List<String?> incoming, List rejected) {
         if (score[emoji] == true) {
           return Container(
-            color: Colors.white,
+            color: Colors.green,
             child: Text('Correct!'),
             alignment: Alignment.center,
             height: 80,
@@ -110,7 +112,7 @@ class ColorGameState extends State<ColorGame> {
           );
         }
          else {
-          return Container(color: Colors.indigo, height: 80, width: 180, child: Text(choices[emoji], style: TextStyle(color: Colors.white, fontSize: 25),),);
+          return Container(color: Colors.indigo, height: 80, width: 180 , alignment: Alignment.center, child: Text(choices[emoji], style: TextStyle(  color: Colors.white, fontSize: 25,  ),),);
         }
       },
       onWillAccept: (data) => data == emoji,
@@ -123,6 +125,9 @@ class ColorGameState extends State<ColorGame> {
             showDialog(context: context, builder: (BuildContext context) => _buildPopupDialog(context));
           }
         });
+        //_audioController.play('audios/Success.mp3');
+        //audioplayer.play('audios/Success.mp3');
+        //_audioController.play('audios/Success.mp3');
       },
       onLeave: (data) {},
     );
@@ -134,10 +139,11 @@ class Emoji extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.transparent,
+      color: Colors.lime,
       child: Container(
         alignment: Alignment.center,
-        height: 70,
+        height: 80,
+        width: 170,
         padding: EdgeInsets.all(10),
         child: Text(
           emoji,

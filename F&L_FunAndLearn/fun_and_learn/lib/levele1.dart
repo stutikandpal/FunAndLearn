@@ -41,23 +41,16 @@ class ColorGame extends StatefulWidget {
 class ColorGameState extends State<ColorGame> {
   final Map<String, bool> score = {};
   final Map choices = {
-    'Rajasthan': 'Marwadi',
-    'Assam':'Assamese',
-    'Bengal':'Bengali',
-    'Punjab':'Punjabi',
-    'Odisha': 'Odia',
-    'Telangana': 'Telugu'
+    '👳‍♀️Rajasthan': 'Marwadi',
+    '😌Assam':'Assamese',
+    '🧕🏼Bengal':'Bengali',
+    '👳🏼‍♂️Punjab':'Punjabi',
+    '🧓🏽Odisha': 'Odia',
+    '🧑🏻Telangana': 'Telugu'
   };
   int count=0;
   int seed = 0;
   
-
-
-
-
-  
-
-
 
 
 
@@ -111,16 +104,16 @@ class ColorGameState extends State<ColorGame> {
       builder: (BuildContext context, List<String?> incoming, List rejected) {
         if (score[emoji] == true) {
           return Container(
-            color: Colors.green[200],
+            color: Colors.green,
             child: Text('✅', style:TextStyle(color: Colors.black, fontSize: 25,fontWeight: FontWeight.bold) ,),
             alignment: Alignment.center,
             height: 60,
-            width: 165,
+            width: 145,
             margin: EdgeInsets.all(15)
           );
         }
          else {
-          return Container(color: Colors.green[200], height: 60, width: 165,margin: EdgeInsets.all(15), child: Text(choices[emoji], 
+          return Container(color: Colors.orange, height: 60, width: 145, alignment: Alignment.center ,margin: EdgeInsets.all(15), child: Text(choices[emoji], 
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25), textAlign: TextAlign.center,),
           );
         }
@@ -149,11 +142,11 @@ class Emoji extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.yellow[200],
+      color: Colors.lightBlue[400],
       child: Container(
         alignment: Alignment.center,
         height: 60,
-        width: 165,
+        width: 180,
         margin: EdgeInsets.all(0),
         padding: EdgeInsets.all(15),
         child: Text(
