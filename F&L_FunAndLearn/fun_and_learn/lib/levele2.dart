@@ -5,6 +5,7 @@ import 'package:fun_and_learn/index.dart';
 import 'package:fun_and_learn/levele3.dart';
 import 'dart:math';
 import 'index.dart';
+
 class MyApp2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -155,12 +156,13 @@ class Emoji extends StatelessWidget {
 }
 Widget _buildPopupDialog(BuildContext context) {
   return new AlertDialog(
-    title: const Text('Congratulations!!'),
+    title: const Text('Congratulations!!',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
     content: new Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text("Level 2 Completed",),
+        Text("Wohoo!! We did it !! Level 2 Completed. 👑👑 \n \n I get a long coat!!🧥 \n \n This will be very useful in cold whether of the mountain!! ❤️❤️",
+        style: TextStyle(fontWeight: FontWeight.bold),),
       ],
     ),
     actions: <Widget>[
